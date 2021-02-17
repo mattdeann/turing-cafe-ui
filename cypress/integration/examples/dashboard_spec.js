@@ -32,7 +32,7 @@ describe("homepage", () => {
     .get("input#number").type("5")
     .get("button").first().click()
     .get("h2").eq(-1).should("have.text", "Matthew")
-    .get("p").eq(-3).should("have.text", "02/17")
+    .get("p").eq(-3).should("have.text", "2/17")
     .get("p").eq(-2).should("have.text", "14:00")
     .get("p").eq(-1).should("have.text", "Number of guests: 5")
     .get("button").eq(9).should("have.text", "Cancel")
