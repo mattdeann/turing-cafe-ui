@@ -8,7 +8,7 @@ function CardContainer({allCards}) {
     if (allCards) {
       cards = allCards.map(resy => {
         return (
-          <Card data={resy} />
+          <Card data={resy} key={resy.id} />
         )
       })
     } else {

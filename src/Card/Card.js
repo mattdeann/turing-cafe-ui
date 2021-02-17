@@ -5,9 +5,9 @@ function Card({data}) {
 
   return (
     <article className="card" key={data.id}>
-      <h1>
+      <h2>
         {data.name}
-      </h1>
+      </h2>
       <p>
         {data.date}
       </p>

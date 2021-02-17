@@ -15,7 +15,11 @@
     "cypress": "./node_modules/.bin/cypress open"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "extends": [
+      "plugin:cypress/recommended"
+    ]
+    
   },
   "browserslist": {
     "production": [

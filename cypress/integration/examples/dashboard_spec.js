@@ -1,0 +1,28 @@
+describe("homepage", () => {
+
+  it("displays the homepage", () => {
+    cy.visit("http://localhost:3000/")
+    cy.get("h1").should("have.text", "Turing Cafe Reservations")
+    .get("input#name").should("have.id", "name")
+    .get("input#date").should("have.id", "date")
+    .get("input#time").should("have.id", "time")
+    .get("input#number").should("have.id", "number")
+    .get("button").eq(0).should("have.text", "Submit")
+    .get("main").get("article").should("have.length", 9)
+    .get("main").get("article").get("h2").first().should("have.text", "Christie")
+    .get("p").first().should("have.text", "12/29")
+    .get("p").eq(1).should("have.text", "7:00")
+    .get("p").eq(2).should("have.text", "Number of guests: 12")
+    .get("button").eq(1).should("have.text", "Cancel")
+  })
+
+  it("updates the form", () => {
+    // cy.get("h1").should("have.text", "Turing Cafe Reservations")
+  })
+
+  it("adds a reservation", () => {
+    // cy.get("h1").should("have.text", "Turing Cafe Reservations")
+  })
+
+
+})
