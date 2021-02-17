@@ -2,6 +2,10 @@ import React from 'react';
 import './Card.css';
 
 function Card({data}) {
+  let date = `${data.date.slice(5,7)}/${data.date.slice(8,10)}`
+  if (date[0] === '0') {
+    date = date.substring(1)
+  }
 
   return (
     <article className="card" key={data.id}>
@@ -9,7 +13,7 @@ function Card({data}) {
         {data.name}
       </h2>
       <p>
-        {data.date}
+        {data.date.length > 6 ? date : data.date}
       </p>
       <p>
         {data.time}
