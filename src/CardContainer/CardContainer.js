@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import './CardContainer.css';
 import Card from '../Card/Card';
+
 
 class CardContainer extends Component {
   constructor() {
@@ -12,11 +14,11 @@ class CardContainer extends Component {
 
   render() {
     return (
-      <div>
+      <main>
         <Card />
         <Card />
         <Card /> 
-      </div>
+      </main>
     )
   }
 }
