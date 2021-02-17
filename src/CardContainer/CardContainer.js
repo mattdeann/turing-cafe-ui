@@ -22,12 +22,24 @@ class CardContainer extends Component {
 
   // to render the cards, we want to iterate over the array and create a card from each array element
 
+//  iterate over this.state.data
+//  for each element, take obejct props and make a react element,
+// 
+//   
+
   render() {
+    let cards = null;
+    if (this.state.data) {
+      cards = this.state.data.map(resy => {
+        return (
+          <Card data={resy} />
+        )
+      })
+    }
+
     return (
       <main>
-        <Card />
-        <Card />
-        <Card /> 
+        {cards}
       </main>
     )
   }

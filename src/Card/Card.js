@@ -1,21 +1,21 @@
 import React from 'react';
 import './Card.css';
 
-function Card() {
+function Card({data}) {
 
   return (
-    <article className="card">
+    <article className="card" key={data.id}>
       <h1>
-        Name
+        {data.name}
       </h1>
       <p>
-        Date
+        {data.date}
       </p>
       <p>
-        Tiime
+        {data.time}
       </p>
       <p>
-        Guests
+        {data.number}
       </p>
       <button>
         Cancel
