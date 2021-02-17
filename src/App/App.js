@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import CardContainer from '../CardContainer/CardContainer'
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          
+          <CardContainer />
         </div>
       </div>
     )
