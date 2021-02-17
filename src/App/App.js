@@ -3,6 +3,24 @@ import './App.css';
 import CardContainer from '../CardContainer/CardContainer'
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      // data is an array
+      data: null
+    }
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3001/api/v1/reservations")
+    .then(response => response.json())
+    .then(response  =>
+      this.setState({data: response})
+    )
+  }
+
+
+
   render() {
     return (
       <div className="App">
@@ -11,7 +29,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          <CardContainer />
+          <CardContainer allCards={this.state.data}/>
         </div>
       </div>
     )

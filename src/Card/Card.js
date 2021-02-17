@@ -15,7 +15,7 @@ function Card({data}) {
         {data.time}
       </p>
       <p>
-        {data.number}
+        Number of guests: {data.number}
       </p>
       <button>
         Cancel
