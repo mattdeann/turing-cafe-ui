@@ -20,9 +20,20 @@ class Form extends Component {
     this.setState({[event.target.id]: event.target.value})
   }
 
+  handleSubmit = () => {
+    const id = this.state.id
+    const name = this.state.name
+    const date = this.state.date
+    const time = this.state.time
+    const number = this.state.number
+
+    this.props.addReservation(id, name, date, time, number)
+    console.log("done")
+  }
+
   render() {
     return(
-      <div className="form">
+      <div className="form" >
         <input 
           id="name" 
           placeholder="Name" 
@@ -50,7 +61,7 @@ class Form extends Component {
           onChange={event => this.handleChange(event)} 
           value={this.state.number}
         />
-        <button>
+        <button onClick={this.handleSubmit}>
           Submit
         </button>
       </div>
