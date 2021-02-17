@@ -20,7 +20,36 @@ class App extends Component {
     )
   }
 
+  postResy = (name, date, time, number) => {
+    console.log(typeof name)
+    console.log(date)
+    console.log(time)
+    console.log(number)
+    
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: name,
+        date: date,
+        time: time,
+        number: parseInt(number)
+      }),
+      redirect: 'follow'
+    };
+
+    return fetch("http://localhost:3001/api/v1/reservations", requestOptions)
+    .then(response => console.log(response))
+    .catch(error => {
+      throw new Error(error)
+    })
+  }
+
   addReservation = (id, name, date, time, number) => {
+    this.postResy(name, date, time, number)
+    
     const newResy = {
       id: id,
       name: name,
