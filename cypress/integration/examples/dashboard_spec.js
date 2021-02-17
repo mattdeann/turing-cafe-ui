@@ -17,6 +17,11 @@ describe("homepage", () => {
   })
 
   it("updates the form", () => {
+    cy.visit("http://localhost:3000/")
+    .get("input#name").type("Matthew").should("have.value", "Matthew")
+    .get("input#date").type("2020-02-17").should("have.value", "2020-02-17")
+    .get("input#time").type("14:00").should("have.value", "14:00")
+    .get("input#number").type("5").should("have.value", "5")
     // cy.get("h1").should("have.text", "Turing Cafe Reservations")
   })
 
