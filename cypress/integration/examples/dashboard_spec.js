@@ -22,11 +22,20 @@ describe("homepage", () => {
     .get("input#date").type("2020-02-17").should("have.value", "2020-02-17")
     .get("input#time").type("14:00").should("have.value", "14:00")
     .get("input#number").type("5").should("have.value", "5")
-    // cy.get("h1").should("have.text", "Turing Cafe Reservations")
   })
 
   it("adds a reservation", () => {
-    // cy.get("h1").should("have.text", "Turing Cafe Reservations")
+    cy.visit("http://localhost:3000/")
+    .get("input#name").type("Matthew")
+    .get("input#date").type("2020-02-17")
+    .get("input#time").type("14:00")
+    .get("input#number").type("5")
+    .get("button").first().click()
+    .get("h2").eq(9).should("have.text", "Matthew")
+    .get("p").eq(-3).should("have.text", "2020-02-17")
+    .get("p").eq(-2).should("have.text", "14:00")
+    .get("p").eq(-1).should("have.text", "Number of guests: 5")
+    .get("button").eq(9).should("have.text", "Cancel")
   })
 
 
